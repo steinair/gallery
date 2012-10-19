@@ -2,11 +2,11 @@
 $rootDir = dirname(getcwd()).'/photos/';
 $_POST['dir'] = urldecode($_POST['dir']);
 $currentDir = $rootDir.$_POST['dir'];
-$currentThumbDir = $currentDir.'.thumbs/';
+$currentThumbDir = $rootDir.'.thumb/'.$_POST['dir'];
 
 if(file_exists($currentDir)) {
 		// Check thumbnail folder
-	if(!is_dir($currentThumbDir)) mkdir($currentThumbDir);
+	if(!is_dir($currentThumbDir)) mkdir($currentThumbDir, 0755, true);
 
 	$files = scandir($currentDir);
 	natcasesort($files);
@@ -26,7 +26,7 @@ if(file_exists($currentDir)) {
 				// Parse thumbnail
 			echo('<li>');
 			echo('<a rel="lightbox[gallery]" href="photos'.$_POST['dir'].$file.'" title="'.$title.'">');
-			echo('<img src="photos'.$_POST['dir'].'.thumbs/'.$file.'" />');
+			echo('<img src="photos/.thumb'.$_POST['dir'].$file.'" />');
 			echo('</a></li>');
 		}
 		echo('</ul>');	
