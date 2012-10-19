@@ -10,25 +10,25 @@ if(file_exists($currentDir)) {
 
 	$files = scandir($currentDir);
 	natcasesort($files);
-	$files = array_reverse($files);
-		echo('<ul class="t">');
-		foreach($files as $file) {
-			if(!preg_match('/\.JPG$/i', $file)) continue;
-				// Generate thumbnail
-			if(!file_exists($currentThumbDir.$file)) {
-				$cmd = '/usr/bin/gm convert -geometry 150x150 -quality 80 "'.$currentDir.$file.'" "'.$currentThumbDir.$file.'"';
-				exec($cmd);
-			}
 
-				// Generate title
-			$title = pathinfo($file, PATHINFO_FILENAME);
-
-				// Parse thumbnail
-			echo('<li>');
-			echo('<a rel="lightbox[gallery]" href="photos'.$_POST['dir'].$file.'" title="'.$title.'">');
-			echo('<img src="photos/.thumb'.$_POST['dir'].$file.'" />');
-			echo('</a></li>');
+	echo('<ul class="t">');
+	foreach($files as $file) {
+		if(!preg_match('/\.JPG$/i', $file)) continue;
+			// Generate thumbnail
+		if(!file_exists($currentThumbDir.$file)) {
+			$cmd = '/usr/bin/gm convert -geometry 150x150 -quality 80 "'.$currentDir.$file.'" "'.$currentThumbDir.$file.'"';
+			exec($cmd);
 		}
-		echo('</ul>');	
+
+			// Generate title
+		$title = pathinfo($file, PATHINFO_FILENAME);
+
+			// Parse thumbnail
+		echo('<li>');
+		echo('<a rel="lightbox[gallery]" href="photos'.$_POST['dir'].$file.'" title="'.$title.'">');
+		echo('<img src="photos/.thumb'.$_POST['dir'].$file.'" />');
+		echo('</a></li>');
+	}
+	echo('</ul>');	
 }
 ?>
