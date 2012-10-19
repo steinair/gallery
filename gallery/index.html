@@ -39,17 +39,17 @@
 			a		{ font-size: 1em; }
 			body		{ background-color: #F4F4F4; }
 			section		{ margin: 1em; padding: 1em; background-color: #FFF; }
-			h1		{ margin: 0; font-weight: normal; font-size: 3.0em; color: #C30; border-bottom: 1px dotted #C30; }
+			h1		{ margin: 0; font-weight: normal; font-size: 2.0em; color: #C30; border-bottom: 1px dotted #C30; }
 			div#c1		{ padding: 1em; width: 200px; float: left; }
 			img#sfh		{ padding: 2em; border-width: 0; }
 			div#c2		{ padding: 1em; margin-left: 220px; }
-			div#gallery	{ min-height: 200px; }
+			div#gallery	{ min-height: 25em; }
 			ul.t		{ height: 1%; list-style-type: none; }
 			ul.t li		{ float: left; width: 160px; height: 160px; }
 			ul.t li img	{ border: 0; }
 			footer		{ clear: both; text-align: center; font-size: 0.8em; border-top: 1px dotted #C30; }
 			a.m		{ unicode-bidi: bidi-override; direction: rtl; }
-			img#spinner	{ position: fixed; display: none; z-index: 100; margin-top: 2em; left: 50%; }
+			div#spinner	{ position: fixed; display: none; z-index: 100; padding: 1em; top: 10em; left: 50%; text-align: center;  border-radius: 15px; -moz-border-radius: 15px; background: #F4F4F4; }
 
 			/* File Tree Overwrite */
 			ul.jqueryFileTree 		{ line-height: 18px; padding: 0px; margin: 0px; }
@@ -70,8 +70,11 @@
 				<a href="http://www.snowflake.ch/hosting/"><img id="sfh" src="gallery/snowflakehosting.png" /></a>
 			</div>
 			<div id="c2">
-				<img id="spinner" src="gallery/spinner.gif" />
 				<div id="gallery">&nbsp;</div>
+				<div id="spinner">
+					<img src="gallery/spinner.gif" />
+					<p>Bilder werden generiert. Bitte warten...</p>
+				</div>
 			</div>
 			<footer>© 2012 Andri Steiner | <a href="#" class="m">hc.ekalfwons@renietsa</a></footer> 
 		</section>
