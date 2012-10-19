@@ -19,12 +19,14 @@
 						multiFolder: false
 					},
 					function(file) { 
+						$('#gallery').addClass('wait');
 						$.ajax({
 							type: "POST",
 							url: 'gallery/gallery.php',
 							data: ({dir: file}),
 							success: function(data) {
 								$('#gallery').html(data);
+								$('#gallery').removeClass('wait');
 							}
 						});
 					}
@@ -41,7 +43,7 @@
 				<a href="http://www.snowflake.ch/hosting/"><img id="sfh" src="gallery/snowflakehosting.png" /></a>
 			</div>
 			<div id="c2">
-				<div id="gallery"></div>
+				<div id="gallery">&nbsp;</div>
 			</div>
 			<footer>© 2012 Andri Steiner | <a href="#" class="m">hc.ekalfwons@renietsa</a></footer> 
 		</section>
