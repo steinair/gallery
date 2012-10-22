@@ -11,7 +11,7 @@ if(file_exists($currentDir)) {
 	$files = scandir($currentDir);
 	natcasesort($files);
 
-	echo('<ul class="t">');
+	echo('<ul class="t thumbnails">');
 	foreach($files as $file) {
 		if(!preg_match('/\.JPG$/i', $file)) continue;
 			// Generate thumbnail
@@ -26,7 +26,7 @@ if(file_exists($currentDir)) {
 			// Parse thumbnail
 		echo('<li>');
 		echo('<a rel="lightbox[gallery]" href="photos'.$_POST['dir'].$file.'" title="'.$title.'">');
-		echo('<img src="photos/.thumb'.$_POST['dir'].$file.'" />');
+		echo('<img class="img-rounded" src="photos/.thumb'.$_POST['dir'].$file.'" />');
 		echo('</a></li>');
 	}
 	echo('</ul>');	

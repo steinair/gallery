@@ -1,13 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
+<!DOCTYPE html>
+<html lang="de">
+	  <head>
 		<title>Album</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta name="robots" content="none" />
 		<script src="//code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
-		<script src="gallery/filetree/jqueryFileTree.js" type="text/javascript"></script>
-		<script src="gallery/lightbox2/js/lightbox.js" type="text/javascript"></script>
 		<link href="gallery/lightbox2/css/lightbox.css" rel="stylesheet" type="text/css" media="screen" />
+		<script src="gallery/lightbox2/js/lightbox.js" type="text/javascript"></script>
+		<script src="gallery/filetree/jqueryFileTree.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			$(document).ready( function() {
 				$('#nav').fileTree(
@@ -33,57 +33,45 @@
 				);
 			});
 		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    		<meta name="author" content="Andri Steiner">
+		<link href="../assets/css/bootstrap.css" rel="stylesheet">
 		<style type="text/css">
-			/* Layout */
-			*		{ font-family: Helvetica, sans-serif; font-size: 12px; color: #404040; }
-			a		{ font-size: 1em; }
-			body		{ background-color: #F4F4F4; }
-			section		{ margin: 1em; padding: 1em; background-color: #FFF; }
-			h1		{ margin: 0; font-weight: normal; font-size: 2.0em; color: #C30; border-bottom: 1px dotted #C30; }
-			div#c1		{ position: fixed; padding: 1em; width: 200px; float: left; }
-			img#sfh		{ margin: 2em; border-width: 0; }
-			div#c2		{ padding: 1em; margin-left: 220px; }
-			div#gallery	{ min-height: 25em; }
-			ul.t		{ height: 1%; list-style-type: none; }
-			ul.t li		{ float: left; width: 160px; height: 160px; }
-			ul.t li img	{ border: 0; }
-			footer		{ clear: both; text-align: center; font-size: 0.8em; border-top: 1px dotted #C30; }
 			a.m		{ unicode-bidi: bidi-override; direction: rtl; }
+			body		{ padding-top: 20px; }
+			div#nav		{ padding: 9px 0; }
+			div#gallery	{ min-height: 25em; }
 			div#spinner	{ position: fixed; display: none; z-index: 100; padding: 1em; top: 10em; left: 50%; text-align: center;  border-radius: 15px; -moz-border-radius: 15px; background: #F4F4F4; }
-
-			/* File Tree Overwrite */
-			ul.jqueryFileTree 		{ line-height: 18px; padding: 0px; margin: 0px; }
-			ul.jqueryFileTree li		{ list-style: none; padding: 0px; padding-left: 20px; margin: 0px; white-space: nowrap; }
-			ul.jqueryFileTree a		{ color: #333; text-decoration: none; display: block; padding: 0px 2px; }
-			ul.jqueryFileTree a:hover 	{ background: #BDF; }
-			.jqueryFileTree li.directory	{ background: url(gallery/filetree/directory.png) left top no-repeat; }
-			.jqueryFileTree li.expanded	{ background: url(gallery/filetree/folder_open.png) left top no-repeat; }
-			.jqueryFileTree li.file		{ background: url(gallery/filetree/file.png) left top no-repeat; }
-			.jqueryFileTree li.wait		{ background: url(gallery/filetree/spinner.gif) left top no-repeat; }
 		</style>
+		<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 	</head>
-	<body id="steinair">
-		<section>
-			<h1>Album</h1>
-			<div id="c1">
-				<div id="nav"></div>
-				<a href="http://www.snowflake.ch/hosting/"><img id="sfh" src="gallery/snowflakehosting.png" /></a>
-			</div>
-			<div id="c2">
-				<div id="gallery">&nbsp;</div>
-				<div id="spinner">
-					<img src="gallery/spinner.gif" />
-					<p>Bilder werden generiert. Bitte warten...</p>
+	<body>
+    		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span2 well" id="nav">&nbsp;</div>
+				<div class="span10 well">
+					<div id="gallery">&nbsp;</div>
+					<div id="spinner">
+						<img src="gallery/spinner.gif" />
+						<p>Bilder werden generiert. Bitte warten...</p>
+					</div>
 				</div>
 			</div>
-			<footer>© 2012 Andri Steiner | <a href="#" class="m">hc.ekalfwons@renietsa</a></footer> 
-		</section>
-		<script type="text/javascript">
-			var m = document.getElementsByTagName('a');
-			for (var i=0; i<m.length; i++) {
-				if (m[i].className != 'm') continue;
-				m[i].href = 'mailto:' + m[i].innerHTML.split('').reverse().join('');
-			}
-		</script>
+		</div>
+		<script src="../assets/js/bootstrap-transition.js"></script>
+		<script src="../assets/js/bootstrap-alert.js"></script>
+		<script src="../assets/js/bootstrap-modal.js"></script>
+		<script src="../assets/js/bootstrap-dropdown.js"></script>
+		<script src="../assets/js/bootstrap-scrollspy.js"></script>
+		<script src="../assets/js/bootstrap-tab.js"></script>
+		<script src="../assets/js/bootstrap-tooltip.js"></script>
+		<script src="../assets/js/bootstrap-popover.js"></script>
+		<script src="../assets/js/bootstrap-button.js"></script>
+		<script src="../assets/js/bootstrap-collapse.js"></script>
+		<script src="../assets/js/bootstrap-carousel.js"></script>
+		<script src="../assets/js/bootstrap-typeahead.js"></script>
 	</body>
 </html>
